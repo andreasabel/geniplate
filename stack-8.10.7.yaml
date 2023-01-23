@@ -1,0 +1,4 @@
+resolver: lts-18.28
+compiler: ghc-8.10.7
+# Allow a newer minor version of GHC than the snapshot specifies
+compiler-check: newer-minor
