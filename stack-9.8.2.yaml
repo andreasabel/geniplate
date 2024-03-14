@@ -1,0 +1,8 @@
+resolver: nightly-2024-03-12
+compiler: ghc-9.8.2
+
+# Allow a newer minor version of GHC than the snapshot specifies
+compiler-check: newer-minor
+
+packages:
+- .

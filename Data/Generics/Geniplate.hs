@@ -436,7 +436,10 @@ subst s (AppT t1 t2) = AppT (subst s t1) (subst s t2)
 subst s (SigT t k) = SigT (subst s t) k
 subst _ t = t
 
-#if MIN_VERSION_template_haskell(2,17,0)
+
+#if MIN_VERSION_template_haskell(2,21,0)
+getTyConInfo :: (Quasi q) => Name -> q ([TyVarBndr BndrVis], [Con])
+#elif MIN_VERSION_template_haskell(2,17,0)
 getTyConInfo :: (Quasi q) => Name -> q ([TyVarBndr ()], [Con])
 #else
 getTyConInfo :: (Quasi q) => Name -> q ([TyVarBndr], [Con])
